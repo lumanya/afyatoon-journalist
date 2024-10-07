@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: gunicorn journalist.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/journalist_web
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: journalist
+      POSTGRES_USER: afyatoon
+      POSTGRES_PASSWORD: afyatoon
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
