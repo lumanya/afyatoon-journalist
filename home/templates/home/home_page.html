@@ -1,21 +1,211 @@
-{% extends "base.html" %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body_class %}template-homepage{% endblock %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In partnership with the Tanzania Media Foundation (TMF), Afyatoon is initiating a digital Collaborative story ideation platform to link journalists to health experts to facilitate AMR based story collaboration.">
+  <meta name="keywords" content="Afyatoon, medtoon">
+  <meta name="author" content="medtoon">
+  <title>Medtoon</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'assets/img/logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/unicons/unicons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/colors/grape.css' %}">
+  <link rel="preload" href="{% static 'assets/css/fonts/urbanist.css' %}" as="style" onload="this.rel='stylesheet'">
+ 
+</head>
 
-{% block extra_css %}
+<body class="!font-urbanist !text-[.85rem]">
+  <div class="grow shrink-0">
+    <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+      <div class="container xl:flex-row lg:flex-row !flex-nowrap items-center">
+        <div class="navbar-brand w-full">
+          <a href='/'>
+            <img src="{% static 'assets/img/logo.png' %}" width="70" alt="image">
+          </a>
+        </div>
+        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+          <div class="offcanvas-header xl:hidden lg:hidden flex items-center justify-between flex-row p-6">
+            <h3 class="text-white xl:text-[1.5rem] !text-[calc(1.275rem_+_0.3vw)] !mb-0">Afyatoon</h3>
+            <button type="button" class="btn-close btn-close-white mr-[-0.75rem] m-0 p-0 leading-none text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)] focus:outline-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
+            <ul class="navbar-nav">          
+           
+            
+            </ul>
+            <!-- /.navbar-nav -->
+         
+            <!-- /.offcanvas-footer -->
+          </div>
+          <!-- /.offcanvas-body -->
+        </div>
+        <!-- /.navbar-collapse -->
+        <div class="navbar-other w-full !flex !ml-auto">
+          <ul class="navbar-nav !flex-row !items-center !ml-auto">
+            <li class="nav-item">
+              <a href="{% url 'wagtailadmin_login' %}" class="nav-link" data-bs-target="#modal-signin">Sign In</a>
+            </li>
+            <li class="nav-item hidden xl:block lg:block md:block">
+              <a href="{% url 'register' %}" class="btn btn-sm btn-primary text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:border-[#3f78e0] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !rounded-[.4rem] !text-[.8rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"  data-bs-target="#modal-signup">Register for FREE</a>
+            </li>
+            <li class="nav-item xl:hidden lg:hidden">
+              <button class="hamburger offcanvas-nav-btn"><span></span></button>
+            </li>
+          </ul>
+          <!-- /.navbar-nav -->
+        </div>
+        <!-- /.navbar-other -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- /header -->
+    <section class="wrapper !bg-[#ffffff]">
+      <div class="container-card">
+        <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 !mt-2 mb-5 [background-size:100%] bg-[center_center] bg-no-repeat !bg-scroll relative z-0 before:content-[''] before:block before:absolute before:z-[1] before:w-full before:h-full before:left-0 before:top-0 before:bg-[rgba(255,255,255,.5)] xxl:!rounded-[.8rem] rounded-0" data-image-src="{%  static 'assets/img/photos/bg22.png' %}">
+          <div class="card-body py-[4.5rem] px-0">
+            <div class="container">
+              <div class="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] mt-[-50px] items-center text-center lg:text-left xl:text-left">
+                <div class="lg:w-6/12 xl:w-6/12 w-full flex-[0_0_auto] px-[15px] md:px-[20px] lg:px-[20px] xl:px-[35px] mt-[50px] max-w-full" data-cues="slideInDown" data-group="page-title" data-delay="900">
+                  <h1 class="xl:text-[2.3rem] text-[calc(1.355rem_+_1.26vw)] font-semibold !leading-[1.2] tracking-[normal] mb-4 xl:!mr-5 xxl:!mr-0">Digital <span class="text-gradient gradient-1">Collaborative</span> story ideation platform </h1>
+                  <p class="lead !text-[1.15rem] !leading-[1.5] font-medium mb-7 xxl:!pr-20">to link journalists to health experts to facilitate AMR based story collaboration..</p>
+                  <div><a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a></div>
+                </div>
+                <!--/column -->
+                <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] px-[15px] md:px-[20px] lg:px-[20px] xl:px-[35px] mt-[50px] max-w-full">
+                  <img class="max-w-full h-auto mb-[-8rem]" src="{% static 'assets/img/illustrations/3d6.png' %}" srcset="./assets/img/illustrations/3d6@2x.png 2x" data-cue="fadeIn" data-delay="300" alt="image">
+                </div>
+                <!--/column -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.container -->
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!-- /.container-card -->
+    </section>
+    <!-- /section -->
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
+    <!-- /section -->
+    <section id="about">
+      <div class="wrapper  bg-[rgba(246,247,249,1)] ">
+        <div class="container py-[4.5rem] xl:!py-24 lg:!py-24 md:!py-24">
+          <div class="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] mt-[-30px] items-center">
+            <div class="md:w-8/12 lg:w-6/12 xl:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full xl:!order-2 lg:!order-2 !mx-auto md:px-[20px] lg:px-[20px] xl:px-[35px] mt-[30px]">
+              <div class="img-mask mask-2"><img src="{% static 'assets/img/photos/cs9-full.jpg' %}" alt="image"></div>
+            </div>
+            <!--/column -->
+            <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full md:px-[20px] lg:px-[20px] xl:px-[35px] mt-[30px]">
+              <h2 class="xl:text-[1.7rem] text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold !mb-3">About Us</h2>
+              <p class="lead !text-[1.1rem] !leading-[1.55] font-medium">In partnership with the Tanzania Media Foundation (TMF), Afyatoon is initiating a digital Collaborative story ideation platform to link journalists to health experts to facilitate AMR based story collaboration.</p>
+              <p>As a journalist or student of journalism, this platform will give you collaborators for your publications ranging from online content, newspaper articles to scripts for documentaries and commentaries around health-related topics with an initial focus on antimicrobial resistance. These collaborators are renowned health experts under the Afyatoon team and beyond.</p>
+              <p>As a health expert, thgis platform will provide you will a tool to communicate your scientific findings or finding from other scientist around different health related topics with an initial focus on antimicrobial resistance to the rest of the Tanzanian community through students of journalism or journalists practicing in Tanzania.</p>
+              <p>Regardless of whether you are a health expert or Journalist, all you need to do is register onto the platform and start your writing journey towards collaborative story ideation with others. We at Afyatoon will help you moderate the link.</p>           
+            </div>
+            <!--/column -->
+          </div>
 
-{% block content %}
+          <br><br><br>
+          <!-- /.row -->
+          <h2 class="text-[calc(1.305rem_+_0.66vw)] font-bold xl:text-[1.8rem] leading-[1.3] !mb-3">Here is how you can start?</h2>
+         
+          <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] mt-[-30px] process-wrapper line" data-cues="slideInUp" data-group="process">
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">01</span></span>
+              <h4 class="!mb-1">Register for Free</h4>
+              <p>Click Register for Free, enter your Username, Email, and Password, then Sign Up (or Log In if you already have an account).</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">02</span></span>
+              <h4 class="!mb-1">Go to Home Page</h4>
+              <p>After logging in, go to Pages > Home.</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">03</span></span>
+              <h4 class="!mb-1">Start New Story</h4>
+              <p>Click the Plus (+) sign at the top left on the Home page.</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">04</span></span>
+              <h4 class="!mb-1">Enter Story Details</h4>
+              <p>Fill in the Title, Introduction (up to 20 words), and Body sections.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] mt-[-30px] process-wrapper line" data-cues="slideInUp" data-group="process">
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">05</span></span>
+              <h4 class="!mb-1">Draft or Paste Content</h4>
+              <p>Write directly or paste content from a saved document.</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">06</span></span>
+              <h4 class="!mb-1">Save and Send for Moderation</h4>
+              <p>Click the arrow next to Save as Draft to submit or save to finish later.</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full !relative after:w-full after:absolute after:content-[''] after:h-px after:z-[1] after:border-t-[rgba(164,174,198,0.2)] after:border-t after:border-solid after:left-[3rem] after:top-6 after:bg-inherit md:after:hidden sm:after:hidden xsm:after:hidden"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">07</span></span>
+              <h4 class="!mb-1">Edit Drafts Later</h4>
+              <p>Log in, go to Home, and click your draft’s Title to continue.</p>
+            </div>
+            <!--/column -->
+            <div class="md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] px-[15px] xl:px-[35px] lg:px-[20px] mt-[30px] max-w-full"> <span class="icon btn btn-circle btn-lg btn-soft-purple pointer-events-none mb-4 !relative z-[2] xl:text-[1.3rem] w-12 h-12 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !p-0 !rounded-[100%]"><span class="number">08</span></span>
+              <h4 class="!mb-1">Submit and Collaborate</h4>
+              <p>Once approved, your story is ready for collaboration.</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.wrapper -->
+    </section>
+    <!-- /section -->
+   
+    <section class="wrapper image-wrapper bg-auto no-overlay bg-image !text-center bg-map bg-[center_center] bg-no-repeat !bg-scroll relative z-[0]" data-image-src="{% static 'assets/img/map.png' %}">
+      <div class="container pt-0 pb-[4.5rem] xl:pt-32 lg:pt-32 md:pt-32 xl:pb-32 lg:pb-32 md:pb-32">
+        <div class="flex flex-wrap mx-[-15px]">
+          <div class="lg:w-10/12 xl:w-9/12 xxl:w-8/12 w-full flex-[0_0_auto] px-[15px] max-w-full !mx-auto">
+            <h3 class="text-[calc(1.305rem_+_0.66vw)] font-bold xl:text-[1.8rem] !leading-[1.3] !mb-8 lg:!px-14 xl:!px-14">Join the AMR Storytelling Network: Collaborate with Health Experts and Journalists Across Tanzania</h3>
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+        <div class="flex justify-center" data-cues="slideInDown" data-group="join">
+          <span><a href="{% url 'wagtailadmin_login' %}" class="btn btn-primary text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:border-[#3f78e0] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] rounded mx-1">Get Started</a></span>
+         
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+  <!-- progress wrapper -->
+  <div class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:text-[#605dba] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path class="fill-none stroke-[#605dba] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"></script>
 
-{% endblock content %}
+  <script src="{% static 'assets/js/plugins.js' %}"></script>
+  <script src="{% static 'assets/js/theme.js' %}"></script>
+</body>
+
+</html>

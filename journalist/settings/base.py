@@ -24,6 +24,9 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    "account",
+    "article",
+    "dashboard",
     "home",
     "search",
     "wagtail.contrib.forms",
@@ -85,12 +88,16 @@ WSGI_APPLICATION = "journalist.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'journalist',
+        'USER': 'afyatoon',
+        'PASSWORD': 'afyatoon',
+        'HOST': 'db',
+        'PORT': '5432',
+        
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -171,10 +178,20 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://example.com"
+WAGTAILADMIN_BASE_URL = "https://cosi.medtoon.co.tz"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST_USER='info@medtoon.co.tz'
+EMAIL_HOST_PASSWORD='GFLB5HMRsS1U'
+EMAIL_HOST='smtp.zoho.com'
+DEFAULT_FROM_EMAIL='info@medtoon.co.tz'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
+

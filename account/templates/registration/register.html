@@ -1,0 +1,67 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load i18n wagtailadmin_tags %}
+{% block titletag %}{% trans "Sign in" %}{% endblock %}
+{% block bodyclass %}login{% endblock %}
+{% block furniture %}
+
+<main class="content-wrapper" id="main">
+
+    <div class="messages" role="status">
+        {# Always show messages div so it can be appended to by JS #}
+        {% if messages or form.errors %}
+            <ul>
+                {% if form.errors %}
+                    {% for error in form.non_field_errors %}
+                        <li class="error">{{ error }}</li>
+                    {% endfor %}
+                {% endif %}
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <form class="login-form" action="{% url 'register' %}" method="post" autocomplete="off" novalidate>
+        {% block login_form %}
+        {% csrf_token %}
+    
+        {% url 'wagtailadmin_home' as home_url %}
+        <input type="hidden" name="next" value="{{ next|default:home_url }}" />
+    
+        {% for field in form %}
+        <p>
+            {% if field.errors %}
+            <ul class="errorlist">
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+             {{ field.label_tag }} {{ field }}
+        </p>
+        {% endfor %}
+    
+        {% endblock %}
+        <footer class="form-actions">
+            {% block submit_buttons %}
+                <button
+                    type="submit"
+                    class="button button-longrunning"
+                    data-controller="w-progress"
+                    data-action="w-progress#activate"
+                    data-w-progress-active-value="{% trans 'Signing up…' %}"
+                >
+                    {% icon name="spinner" %}
+                    <em data-w-progress-target="label">{% trans 'Sign Up' %}</em>
+                </button>
+            {% endblock %}
+            <a class="mt-3" href="{% url 'wagtailadmin_login' %}">I already have an account</a>
+        </footer>
+    </form>
+    
+
+</main>
+
+
+
+{% endblock %}

@@ -3,11 +3,16 @@ version: '3.7'
 services:
   web:
     build: .
-    command: gunicorn journalist.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn journalist.wsgi:application --bind 0.0.0.0:8001
+    environment:
+      - EMAIL_HOST_USER=info@medtoon.co.tz
+      - EMAIL_HOST_PASSWORD=GFLB5HMRsS1U
+      - EMAIL_HOST=smtp.zoho.com
+      - DEFAULT_FROM_EMAIL=info@medtoon.co.tz
     volumes:
       - .:/journalist_web
     ports:
-      - "8000:8000"
+      - "8001:8001"
     depends_on:
       - db
   
