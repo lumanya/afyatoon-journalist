@@ -195,3 +195,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://cosi.medtoon.co.tz',
+]
